@@ -1,0 +1,471 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: #191919;
+  font-family: monospace;
+}
+
+#status {
+  width: 50rem;
+  height: 1.3rem;
+  position: fixed;
+  top: calc(50% - 28rem);
+  left: calc(50% - 25rem);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+#status #health-bar,
+#status #power-bar {
+  width: 5rem;
+  height: 1rem;
+  border: 0.1rem solid white;
+  margin-top: 0.5rem;
+  padding: 0.1rem;
+}
+
+#status #health-bar #health,
+#status #power-bar #health {
+  height: 0.7rem;
+  background: red;
+}
+
+#status #health-bar #power-load,
+#status #power-bar #power-load {
+  height: 0.7rem;
+  background: orange;
+}
+
+#status #lives,
+#status #power,
+#status #enimy,
+#status #medium-weapon,
+#status #heavy-weapon,
+#status #point {
+  width: 3rem;
+  height: 100%;
+  font-size: 1.3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0.25rem 0;
+}
+
+#status #life,
+#status #overpower,
+#status #enemies,
+#status #medium,
+#status #heavy,
+#status #score {
+  font-size: 1.3rem;
+  padding-left: 1rem;
+}
+
+#status #lives {
+  color: red;
+}
+
+#status #lives #life {
+  color: white;
+}
+
+#status #power {
+  color: orange;
+}
+
+#status #power #overpower {
+  color: white;
+}
+
+#status #enemy {
+  color: green;
+}
+
+#status #enemy #enemies {
+  color: white;
+}
+
+#status #medium-weapon {
+  color: purple;
+}
+
+#status #medium-weapon #medium {
+  color: white;
+}
+
+#status #heavy-weapon {
+  color: orangered;
+}
+
+#status #heavy-weapon #heavy {
+  color: white;
+}
+
+#status #point {
+  color: gold;
+}
+
+#status #point #score {
+  color: white;
+}
+
+#wrapper {
+  width: 50rem;
+  height: 50rem;
+  position: fixed;
+  top: calc(50% - 25rem);
+  left: calc(50% - 25rem);
+  background: black;
+}
+
+.star {
+  width: 0.1rem;
+  height: 0.1rem;
+  background: white;
+  font-size: 0.1rem;
+  position: absolute;
+  -webkit-animation: twinkle 3s ease-in-out infinite;
+          animation: twinkle 3s ease-in-out infinite;
+}
+
+@-webkit-keyframes twinkle {
+  0% {
+    width: 0.1rem;
+    height: 0.1rem;
+  }
+  50% {
+    width: 0.15rem;
+    height: 0.15rem;
+  }
+  100% {
+    width: 0.1rem;
+    height: 0.1rem;
+  }
+}
+
+@keyframes twinkle {
+  0% {
+    width: 0.1rem;
+    height: 0.1rem;
+  }
+  50% {
+    width: 0.15rem;
+    height: 0.15rem;
+  }
+  100% {
+    width: 0.1rem;
+    height: 0.1rem;
+  }
+}
+
+#wrapper #final-message {
+  width: 100%;
+  height: 100%;
+  color: white;
+  padding: 10%;
+  letter-spacing: 0.2rem;
+  background: black;
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#wrapper #final-message h2 {
+  font-size: 4rem;
+  text-align: center;
+  width: 100%;
+}
+
+#wrapper #final-message #result {
+  margin: 5rem auto;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+#wrapper #final-message #result p {
+  font-size: 1.5rem;
+  margin: 0 auto;
+  width: 90%;
+}
+
+#wrapper #final-message #result p:nth-child(odd) {
+  color: yellow;
+  text-align: right;
+}
+
+#wrapper #final-message #btns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+#wrapper #final-message #btns button {
+  padding: 1rem 2rem;
+  border: 0.1rem solid white;
+  background: black;
+  color: white;
+  text-transform: uppercase;
+}
+
+#wrapper #final-message #btns button:hover {
+  cursor: pointer;
+}
+
+.dye-animation {
+  -webkit-animation: dyeAnimation 1s forwards;
+          animation: dyeAnimation 1s forwards;
+}
+
+@-webkit-keyframes dyeAnimation {
+  0% {
+    background: black;
+  }
+  20% {
+    background: white;
+  }
+  40% {
+    background: black;
+  }
+  60% {
+    background: white;
+  }
+  80% {
+    background: black;
+  }
+  100% {
+    background: black;
+  }
+}
+
+@keyframes dyeAnimation {
+  0% {
+    background: black;
+  }
+  20% {
+    background: white;
+  }
+  40% {
+    background: black;
+  }
+  60% {
+    background: white;
+  }
+  80% {
+    background: black;
+  }
+  100% {
+    background: black;
+  }
+}
+
+#player {
+  width: 2rem;
+  height: 3rem;
+  position: relative;
+  top: 46rem;
+  left: 24rem;
+}
+
+#player img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.blink {
+  -webkit-animation: blink 1s forwards;
+          animation: blink 1s forwards;
+}
+
+@-webkit-keyframes blink {
+  0% {
+    color: white;
+  }
+  25% {
+    color: red;
+  }
+  50% {
+    color: white;
+  }
+  75% {
+    color: red;
+  }
+  100% {
+    color: white;
+  }
+}
+
+@keyframes blink {
+  0% {
+    color: white;
+  }
+  25% {
+    color: red;
+  }
+  50% {
+    color: white;
+  }
+  75% {
+    color: red;
+  }
+  100% {
+    color: white;
+  }
+}
+
+.player-explosion {
+  -webkit-animation: playerExplode 1s forwards;
+          animation: playerExplode 1s forwards;
+}
+
+@-webkit-keyframes playerExplode {
+  0% {
+    font-size: 1.5rem;
+  }
+  25% {
+    font-size: 1rem;
+  }
+  50% {
+    font-size: 1.5rem;
+  }
+  75% {
+    font-size: 1rem;
+  }
+  100% {
+    font-size: 1.5rem;
+  }
+}
+
+@keyframes playerExplode {
+  0% {
+    font-size: 1.5rem;
+  }
+  25% {
+    font-size: 1rem;
+  }
+  50% {
+    font-size: 1.5rem;
+  }
+  75% {
+    font-size: 1rem;
+  }
+  100% {
+    font-size: 1.5rem;
+  }
+}
+
+.bullet {
+  width: 0.2rem;
+  height: 0.5rem;
+  background: yellow;
+  z-index: -1;
+}
+
+.enemy-player {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: lightgreen;
+  font-size: 1.5rem;
+  display: block;
+  position: absolute;
+  top: 0rem;
+}
+
+.animate {
+  -webkit-animation: animate 10s linear forwards;
+          animation: animate 10s linear forwards;
+}
+
+@-webkit-keyframes animate {
+  0% {
+    top: 0rem;
+  }
+  100% {
+    top: 48.5rem;
+  }
+}
+
+@keyframes animate {
+  0% {
+    top: 0rem;
+  }
+  100% {
+    top: 48.5rem;
+  }
+}
+
+#instructions {
+  display: -ms-grid;
+  display: grid;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-size: 1.2rem;
+  position: fixed;
+  top: 86vh;
+  left: calc(50vw - 25rem);
+  width: 50rem;
+}
+
+#instructions .shoot {
+  color: white;
+}
+
+#instructions .shoot:nth-of-type(2) {
+  text-align: center;
+}
+
+#instructions .shoot:nth-of-type(3) {
+  text-align: center;
+}
+
+#instructions .shoot:nth-of-type(3) {
+  text-align: right;
+}
+
+#not-available {
+  width: 90%;
+  height: 90%;
+  margin: 5%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: white;
+  font-size: 3rem;
+  text-align: center;
+}
+/*# sourceMappingURL=main.css.map */

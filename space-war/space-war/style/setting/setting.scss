@@ -1,0 +1,229 @@
+$body-color: #191919;
+$wrapper-color: black;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: $body-color;
+  font-family: monospace;
+}
+
+#status {
+  width: 50rem;
+  height: 1.3rem;
+  position: fixed;
+  top: calc(50% - 28rem);
+  left: calc(50% - 25rem);
+  display: flex;
+  justify-content: space-around;
+
+  // health bar
+  #health-bar,
+  #power-bar {
+    width: 5rem;
+    height: 1rem;
+    border: 0.1rem solid white;
+    margin-top: 0.5rem;
+    padding: 0.1rem;
+    #health {
+      height: 0.7rem;
+      background: red;
+    }
+    #power-load {
+      height: 0.7rem;
+      background: orange;
+    }
+  }
+
+  #lives,
+  #power,
+  #enimy,
+  #medium-weapon,
+  #heavy-weapon,
+  #point {
+    width: 3rem;
+    height: 100%;
+    font-size: 1.3rem;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.25rem 0;
+  }
+
+  #life,
+  #overpower,
+  #enemies,
+  #medium,
+  #heavy,
+  #score {
+    font-size: 1.3rem;
+    padding-left: 1rem;
+  }
+
+  // lives
+  #lives {
+    color: red;
+    #life {
+      color: white;
+    }
+  }
+
+  // overpower
+  #power {
+    color: orange;
+    #overpower {
+      color: white;
+    }
+  }
+
+  // killed enimies
+  #enemy {
+    color: green;
+    #enemies {
+      color: white;
+    }
+  }
+
+  // medium weapons
+  #medium-weapon {
+    color: purple;
+    #medium {
+      color: white;
+    }
+  }
+
+  // heavy weapons
+  #heavy-weapon {
+    color: orangered;
+    #heavy {
+      color: white;
+    }
+  }
+
+  // score
+  #point {
+    color: gold;
+    #score {
+      color: white;
+    }
+  }
+}
+
+#wrapper {
+  width: 50rem;
+  height: 50rem;
+  // margin: calc(50vh - 25rem) auto;
+  position: fixed;
+  top: calc(50% - 25rem);
+  left: calc(50% - 25rem);
+  background: $wrapper-color;
+}
+
+.star {
+  width: 0.1rem;
+  height: 0.1rem;
+  background: white;
+  font-size: 0.1rem;
+  position: absolute;
+  animation: twinkle 3s ease-in-out infinite;
+}
+
+@keyframes twinkle {
+  0% {
+    width: 0.1rem;
+    height: 0.1rem;
+  }
+  50% {
+    width: 0.15rem;
+    height: 0.15rem;
+  }
+  100% {
+    width: 0.1rem;
+    height: 0.1rem;
+  }
+}
+
+#wrapper {
+  #final-message {
+    width: 100%;
+    height: 100%;
+    color: white;
+    padding: 10%;
+    letter-spacing: 0.2rem;
+    background: black;
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    h2 {
+      font-size: 4rem;
+      text-align: center;
+      width: 100%;
+    }
+    #result {
+      margin: 5rem auto;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      p {
+        font-size: 1.5rem;
+        margin: 0 auto;
+        width: 90%;
+        &:nth-child(odd) {
+          color: yellow;
+          text-align: right;
+        }
+      }
+    }
+    #btns {
+      display: flex;
+      justify-content: space-around;
+
+      button {
+        padding: 1rem 2rem;
+        border: 0.1rem solid white;
+        background: black;
+        color: white;
+        text-transform: uppercase;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+.dye-animation {
+  animation: dyeAnimation 1s forwards;
+}
+
+@keyframes dyeAnimation {
+  0% {
+    background: black;
+  }
+  20% {
+    background: white;
+  }
+  40% {
+    background: black;
+  }
+  60% {
+    background: white;
+  }
+  80% {
+    background: black;
+  }
+  100% {
+    background: black;
+  }
+}

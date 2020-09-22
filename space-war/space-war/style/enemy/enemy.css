@@ -1,0 +1,33 @@
+.enemy-player {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: lightgreen;
+  font-size: 1.5rem;
+  display: block;
+  position: absolute;
+  top: 0rem;
+}
+
+.animate {
+  -webkit-animation: animate 10s linear forwards;
+          animation: animate 10s linear forwards;
+}
+
+@-webkit-keyframes animate {
+  0% {
+    top: 0rem;
+  }
+  100% {
+    top: 48.5rem;
+  }
+}
+
+@keyframes animate {
+  0% {
+    top: 0rem;
+  }
+  100% {
+    top: 48.5rem;
+  }
+}
+/*# sourceMappingURL=enemy.css.map */

@@ -1,0 +1,24 @@
+.enemy-player {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: lightgreen;
+  font-size: 1.5rem;
+  display: block;
+
+  position: absolute;
+  top: 0rem;
+  // left: 50%;
+}
+
+.animate {
+  animation: animate 10s linear forwards;
+}
+
+@keyframes animate {
+  0% {
+    top: 0rem;
+  }
+  100% {
+    top: 48.5rem;
+  }
+}

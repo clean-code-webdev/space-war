@@ -1,0 +1,39 @@
+@import "../setting/setting.scss";
+@import "../player/player.scss";
+@import "../bullet/bullet.scss";
+@import "../enemy/enemy.scss";
+
+#instructions {
+  display: grid;
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.2rem;
+  position: fixed;
+  top: 86vh;
+  left: calc(50vw - 25rem);
+  width: 50rem;
+  .shoot {
+    color: white;
+    &:nth-of-type(2) {
+      text-align: center;
+    }
+    &:nth-of-type(3) {
+      text-align: center;
+    }
+    &:nth-of-type(3) {
+      text-align: right;
+    }
+  }
+}
+
+#not-available {
+  width: 90%;
+  height: 90%;
+  margin: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 3rem;
+  text-align: center;
+}
