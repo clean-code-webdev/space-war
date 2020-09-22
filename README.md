@@ -11,4 +11,5 @@ HTML, CSS and JavaScript
 Ricardo Martinez
 
 ## Stage
-Minor changes yet to be done, i.e. adding medium and heavy weapons.
+Some changes yet to be done, i.e. adding medium and heavy weapons
+Minor bugs to be fixed
